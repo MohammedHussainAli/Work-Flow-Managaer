@@ -1,0 +1,17 @@
+.btn{
+    /* border: black; */
+    color: white;
+    background-color: #FF4D4D;
+    transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+    background-color: transparent;
+    border: solid 1px black;
+    color: black;
+    
+}
+#header{
+    background-color: #f70c14;
+    /* background-color: #33004D; */
+}
+
