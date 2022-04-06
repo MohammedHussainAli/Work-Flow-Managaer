@@ -1,0 +1,20 @@
+{
+  "workflows": [
+    {
+      "id": 1,
+      "workflowname": "Angular Front End",
+      "workflowdescription": "Deadline to submit is on April 6th",
+      "workflowstatus": "In Progress"
+    },
+    {
+      "id": 2,
+      "workflowname": "Spring Boot",
+      "workflowdescription": "Need to be finished within last week of April.",
+      "workflowstatus": "Open"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

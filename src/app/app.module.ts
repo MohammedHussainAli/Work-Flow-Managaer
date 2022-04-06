@@ -12,6 +12,10 @@ import { CreateWfComponent } from './create-wf/create-wf.component';
 import { HelpDeskComponent } from './help-desk/help-desk.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateWfComponent } from './update-wf/update-wf.component';
+import { ViewWfComponent } from './view-wf/view-wf.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,11 +28,15 @@ import { SignupComponent } from './signup/signup.component';
     CreateWfComponent,
     HelpDeskComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    UpdateWfComponent,
+    ViewWfComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

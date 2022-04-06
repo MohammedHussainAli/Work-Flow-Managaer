@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
+  registerForm:any =  FormGroup;
+  submitted = false;
 
-  ngOnInit(): void {
+  get f() { return this.registerForm.controls; }
+  onSubmit() {
+    
+    this.submitted = true;
+  
+    if (this.registerForm.invalid) {
+        return;
+    }
+   
+    if(this.submitted)
+    {
+      alert("Welcome to Work-Flow Manager");
+    }
+  
   }
-
-}
+  ngOnInit(): void {
+    this.registerForm = this.formBuilder.group({
+     email: ['', [Validators.required, Validators.email]],
+     password: ['', [Validators.required]],
+     });
+   }
+ }

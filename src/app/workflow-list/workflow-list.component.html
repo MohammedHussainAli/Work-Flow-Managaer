@@ -1,1 +1,121 @@
-<p>workflow-list works!</p>
+<!-- <h2> Work-Flow List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>Work-Flow Name</th>
+            <th>Work-Flow Details</th>
+            <th>Status</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <td>Angular Front-end</td>
+            <td>Creatong front-end UI by angular framework</td>
+            <td>Running</td>
+            <td>
+                <button  class = "btn btn-info"> Update</button>
+                <button  class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button  class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr >
+            <td>Angular Front-end</td>
+            <td>Creatong front-end UI by angular framework</td>
+            <td>Running</td>
+            <td>
+                <button  class = "btn btn-info"> Update</button>
+                <button  class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button  class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr >
+            <td>Angular Front-end</td>
+            <td>Creatong front-end UI by angular framework</td>
+            <td>Running</td>
+            <td>
+                <button  class = "btn btn-info"> Update</button>
+                <button  class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button  class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr >
+            <td>Angular Front-end</td>
+            <td>Creatong front-end UI by angular framework</td>
+            <td>Running</td>
+            <td>
+                <button  class = "btn btn-info"> Update</button>
+                <button  class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button  class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+    
+</table> -->
+
+
+<div class="container-xl">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<h2>Manage &nbsp;your&nbsp;<b> Work-Flows</b></h2>
+					</div>
+					<div  class="col-sm-12 add-new" style="height: 50px;">
+						<a routerLink="/create" class="btn btn-dark" style="height: 50px; width: 230px; padding: 10px; font-size:1.1em; border-radius: 5px;" data-toggle="modal"><svg style="color: #ff4d4d;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                          </svg><span class="add-new">&nbsp;&nbsp;Add New Work-Flow</span></a>						
+					</div>
+				</div>
+			</div>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr >
+						<th>
+							
+						</th>
+						<th>Work-Flow Name</th>
+						<th>Work-Flow Description</th>
+						<th>Work-Flow Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let row of workflowdata">
+						<td>
+							
+						</td>
+						<td>{{row.workflowname}}</td>
+						<td ><p>{{row.workflowdescription}}</p> </td>
+						<td><svg style="color: chartreuse;" xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+              <circle cx="8" cy="8" r="8"/>
+            </svg> {{row.workflowstatus}}</td>
+						
+						<td>
+
+							<a routerLink="/update-workflow" onclick="update(row.id)" style="margin-left: -90px;" href="#editEmployeeModal" class="edit" data-toggle="modal" title="Update"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+                              </svg></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a (click)="deleteWorkflow(row)" style="cursor: pointer;" class="delete" data-toggle="modal" title="Delete"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                              </svg></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              
+               <a routerLink="/view" class="delete" data-toggle="modal" title="View"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                              </svg></a>
+
+						</td>
+          </tr>
+				</tbody>
+			</table>
+            <button routerLink="" id="back-home">Back to Home</button>
+		</div>
+	</div>        
+</div>

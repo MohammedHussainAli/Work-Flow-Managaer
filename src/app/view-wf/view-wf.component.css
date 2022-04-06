@@ -1,0 +1,94 @@
+*{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.blog-card {
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.582),
+              -1px -1px 10px 0 rgba(0, 0, 0, 0.603);
+  width: 1500px;
+  margin: 10px;
+  height: 530px;
+  
+}
+
+.header {
+  padding: 22px;
+  height: 80px;
+  width: 1500px;
+  background-color: #FF4D4D;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.category {
+  margin: 0;
+  padding: 30px;
+  color: #fff;
+  font-size: 1em;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-transform: uppercase;
+}
+
+.picture-wrapper {
+  position: relative;
+  width: 40%;
+  background-image: url(https://img.freepik.com/free-vector/editorial-commission-concept-illustration_114360-7751.jpg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.text-wrapper {
+  padding: 40px;
+  width: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+label{
+  font-size: 1.4em;
+  color: #fff;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+}
+.back{
+  border: none;
+  position: absolute;
+  top: 91%;
+  left: 33%;
+  width: 145px;
+  height: 40px;
+  font-size: larger;
+  background-color: #F44336;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-weight: 550;
+  transition: 200ms;
+}
+.back:hover{
+  background-color: #000000;
+  color: #F44336;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-20px);
+}
+
+.text {
+ 
+  font-size: 1em;
+  padding: 4vh 4vh;
+}
+
+.hover {
+  font-size: 1.5625em;
+}
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+    
+  .picture-wrapper {
+    position: relative;
+    width: 50%;
+    height: 450px;
+    border-bottom-left-radius: 10px;
+  }

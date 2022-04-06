@@ -1,0 +1,59 @@
+.login,
+.image {
+  min-height: 85vh;
+}
+.bg-image {
+  background-image: url('https://img.freepik.com/free-vector/privacy-policy-protecting-your-privacy_126283-816.jpg');
+  background-size: cover;
+  background-position: center center;
+  margin-top: -12px;
+}
+.invalid-feedback
+{
+  margin-left: 25px;
+}
+.login{
+    margin-top: -10%;
+}
+.btn{
+  width: 140px;
+  border-radius: 50px;
+  color: #fff;
+  background-color: #f70c14;
+  padding: 8px 10px
+}
+.btn:hover{
+  color: #f70c14;
+  background-color: black;
+  transition: all 0.4s ease-in-out;
+}
+input,
+textarea {
+    /* background-color: #F3E5F5; */
+    padding: 8px 0px 8px 0px !important;
+    width: 100%;
+    border-radius: 0 !important;
+    box-sizing: border-box;
+    border: none !important;
+    border-bottom: 1px solid #979191 !important;
+    font-size: 18px !important;
+    color: #000 !important;
+    font-weight: 300
+}
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #D32F2F !important;
+    outline-width: 0;
+    font-weight: 400
+}
+a{
+  color: #f70c14;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+  color: #000;
+}

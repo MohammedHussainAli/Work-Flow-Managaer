@@ -5,6 +5,8 @@ import { HelpDeskComponent } from './help-desk/help-desk.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UpdateWfComponent } from './update-wf/update-wf.component';
+import { ViewWfComponent } from './view-wf/view-wf.component';
 import { WorkflowListComponent } from './workflow-list/workflow-list.component';
 
 const routes: Routes = [
@@ -31,6 +33,18 @@ const routes: Routes = [
   {
     component:SignupComponent,
     path:"signup"
+  },
+  // {
+  //   component:UpdateWfComponent,
+  //   path:"update"
+  // },
+  {
+    component:UpdateWfComponent,
+    path:"update-workflow"
+  },
+  {
+    component:ViewWfComponent,
+    path:"view"
   }
 ];
 
