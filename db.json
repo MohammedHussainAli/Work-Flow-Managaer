@@ -9,11 +9,24 @@
     {
       "id": 2,
       "workflowname": "Spring Boot",
-      "workflowdescription": "Need to be finished within last week of April.",
-      "workflowstatus": "Open"
+      "workflowdescription": "Need to be finished on last week of April.",
+      "workflowstatus": "Closed"
+    },
+    {
+      "id": 3,
+      "workflowname": "Milestone Assesment",
+      "workflowdescription": "next week",
+      "workflowstatus": "Closed"
     }
   ],
-  "comments": [],
+  "users": [
+    {
+      "username": "mohammed",
+      "email": "mohammedhussainjhs@gmail.com",
+      "password": "ali0044",
+      "id": 2
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

@@ -12,7 +12,7 @@ import { CreateWfComponent } from './create-wf/create-wf.component';
 import { HelpDeskComponent } from './help-desk/help-desk.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateWfComponent } from './update-wf/update-wf.component';
 import { ViewWfComponent } from './view-wf/view-wf.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

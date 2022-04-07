@@ -22,18 +22,18 @@
           </ul>
     </div>
   
-    <div class="content">
+    <div class="content" [formGroup]="formValue" >
       <div class="picture-wrapper"> <button class="back" routerLink="/wf-list">Back to List</button></div>
           
       <div class="text-wrapper">  
         <div class="text">
-            <label> <b style="font-size: 1.2em; color:  #FF4D4D;" > Work-Flow Name : </b>&nbsp;Angular Project</label><br><br><br>
+            <label > <b style="font-size: 1.2em; color:  #FF4D4D;" > Work-Flow Name : </b>&nbsp;<input style="border: black; background: rgb(0, 0, 0); color: white; width: 600px; height: 40px;" type="text"  formControlName = "workflowname" [(ngModel)]="workflow.workflowname" id="Work-Flow-Name" required autocomplete="off" readonly="readonly" ></label><br><br><br>
             
-            <label> <b style="font-size: 1.2em;color:  #FF4D4D;"> Description : </b>&nbsp;Complete within 3nd of this month </label><br><br><br>
+            <label> <b style="font-size: 1.2em;color:  #FF4D4D;"> Description : </b>&nbsp;<br><br><textarea style="background-color: black; border: none; color: white;"  id="text-area" name="text-description" rows="2" cols="80" formControlName = "workflowdescription" [(ngModel)]="workflow.workflowdescription" readonly="readonly"></textarea> </label><br><br>
             
             <label> <b style="font-size: 1.2em; color:  #FF4D4D;"> Status : </b>&nbsp;<svg style="color: chartreuse;" xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
               <circle cx="8" cy="8" r="8"/>
-            </svg> In Progress</label>
+            </svg>&nbsp;<input style="border: none; background: rgb(0, 0, 0); color: white; width: 600px; height: 40px;"  type="text" formControlName = "workflowstatus" [(ngModel)]="workflow.workflowstatus" id="status" required autocomplete="off" readonly="readonly"></label>
         </div>
       </div>
     </div>

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { WorkflowDetails } from '../Models/workflow-details';
+import { WorkflowFind } from '../Models/workflow-find';
+import { UpdateService } from '../services/update.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-view-wf',
@@ -7,9 +12,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewWfComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formbuilder: FormBuilder, public route:ActivatedRoute, public router:Router, public ups:UpdateService) { }
 
+  val:any;
+  formValue !: FormGroup;
+  workflows:WorkflowDetails[] =[];
+  workflow!: WorkflowFind;
   ngOnInit(): void {
+
+    this.formValue = this.formbuilder.group({
+      workflowname : [''],
+      workflowdescription : [''],
+      workflowstatus : ['']
+    })
+    let sub = this.route.params.subscribe(params => {
+      this.val = params['id'];
+    })
+    
+    this.ups.getUpdateWorkflowDetails(this.val).subscribe(data=> {
+      this.workflow = data;
+    })
+    
   }
+
+  getWorkflowDetails(){
+    this.ups.getWorkflowDetails().subscribe((res) => {
+      this.workflows = res;
+    });
+  }
+
 
 }

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { WorkflowDetails } from '../Models/workflow-details';
+import { WorkflowFind } from '../Models/workflow-find';
+import { UpdateService } from '../services/update.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { WorkFlow } from '../Models/workflow';
-import { WorkFlowServiceService } from '../services/work-flow-service.service';
+
+
 
 @Component({
   selector: 'app-update-wf',
@@ -9,26 +13,45 @@ import { WorkFlowServiceService } from '../services/work-flow-service.service';
   styleUrls: ['./update-wf.component.css']
 })
 export class UpdateWfComponent implements OnInit {
-  formValue !: FormGroup;
-  workflowobj : WorkFlow = new WorkFlow();
+ 
 
-  constructor(private formbuilder: FormBuilder, private api : WorkFlowServiceService) { }
+  constructor(private formbuilder: FormBuilder, public route:ActivatedRoute, public router:Router, public ups:UpdateService) { }
+
+  val:any;
+  formValue !: FormGroup;
+  workflows:WorkflowDetails[] =[];
+  workflow!: WorkflowFind;
 
   ngOnInit(): void {
+    this.formValue = this.formbuilder.group({
+      workflowname : [''],
+      workflowdescription : [''],
+      workflowstatus : ['']
+    })
+    let sub = this.route.params.subscribe(params => {
+      this.val = params['id'];
+    })
+    
+    this.ups.getUpdateWorkflowDetails(this.val).subscribe(data=> {
+      this.workflow = data;
+    })
     
   }
-  updateWorkflowdetails(){
-    this.workflowobj.workflowname = this.formValue.value.workflowname;
-    this.workflowobj.workflowdescription= this.formValue.value.workflowdescription;
-    this.workflowobj.workflowstatus = this.formValue.value.workflowstatus;
-  
-    this.api.updateWorkflow(this.workflowobj, this.workflowobj.id)
-    //subscrbe and on success response-->
-    .subscribe(res=>{
-      alert("Work-Flow Updated Successfully");
-  
-    })
+
+  update(){
+    this.ups.updateWorkflowDetails(this.workflow).subscribe(data=>{
+    });
+    this.getWorkflowDetails();
+    alert("Work-Flow Updated Successfully")
+    this.router.navigate(['wf-list']);
   }
+
+  getWorkflowDetails(){
+    this.ups.getWorkflowDetails().subscribe((res) => {
+      this.workflows = res;
+    });
+  }
+
 
 
 }

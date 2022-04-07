@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { WorkFlow } from '../Models/workflow';
 import { WorkFlowServiceService } from '../services/work-flow-service.service';
 
@@ -13,7 +14,7 @@ export class CreateWfComponent implements OnInit {
   formValue !: FormGroup;
   workflowobj : WorkFlow = new WorkFlow();
   // WorkFlowServiceService: any;
-  constructor(private formbuilder: FormBuilder, private api : WorkFlowServiceService) { }
+  constructor(private formbuilder: FormBuilder, private api : WorkFlowServiceService, private router:Router) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
@@ -32,6 +33,7 @@ postWorkflowDetails(){
    console.log(res);
    alert("Work-Flow added Successfully")
    this.formValue.reset();
+   this.router.navigate(['wf-list']);
  },
    err=>{
      alert("Something Went wrong, please try again")

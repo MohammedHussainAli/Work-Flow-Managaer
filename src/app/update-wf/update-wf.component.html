@@ -10,20 +10,20 @@
             </ul>
           </div>
           <div class="register-form">
-            <form [formGroup]="formValue">
+            <form [formGroup]="formValue" >
                 <div class="input-div">
-                    <input type="text" formControlName = "workflowname" id="Work-Flow-Name" required autocomplete="off">
+                    <input type="text" formControlName = "workflowname" [(ngModel)]="workflow.workflowname" id="Work-Flow-Name" required autocomplete="off">
                     <label for="Work-Flow-Name">Work Flow Name</label>
                     <div class="bar"></div>
                 </div><br>
                 <div class="input-div">
-                    <input type="text" formControlName = "workflowdescription" id="details" required autocomplete="off">
+                    <input type="text" formControlName = "workflowdescription" [(ngModel)]="workflow.workflowdescription" id="details" required autocomplete="off">
                     <label for="details">Work Flow Description</label>
                     <div class="bar"></div>
   
                 </div><br>
                 <div class="input-div">
-                    <input type="text" formControlName = "workflowstatus" id="status" required autocomplete="off">
+                    <input type="text" formControlName = "workflowstatus" [(ngModel)]="workflow.workflowstatus" id="status" required autocomplete="off">
                     <label for="status">Work Flow Status</label>
                     <div class="bar"></div>
   
@@ -31,7 +31,7 @@
             
                   <div class="input-div">
                       <!-- <input type="button" value="Submit"> -->
-                      <button (click)="updateWorkflowdetails()" id="submit">Update</button>
+                      <button (click)="update()" id="submit">Update</button>
                   </div>
               </form>
           </div>

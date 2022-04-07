@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { WorkFlow } from '../Models/workflow';
 import { WorkFlowServiceService } from '../services/work-flow-service.service';
+import { WorkflowDetails } from '../Models/workflow-details';
+import { UpdateService } from '../services/update.service';
 
 @Component({
   selector: 'app-workflow-list',
@@ -15,7 +17,11 @@ export class WorkflowListComponent implements OnInit {
   workflowdata !: any;
 
   constructor(private formbuilder: FormBuilder, private api : WorkFlowServiceService,
-    private router:Router) { }
+    private router:Router, private ups:UpdateService) { }
+
+    columns = ["Work-Flow Name", "Work-Flow Description", "Work-Flow Status"];
+
+    workflow: WorkflowDetails[] = [];
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
@@ -24,6 +30,14 @@ export class WorkflowListComponent implements OnInit {
       workflowstatus : ['']
     })
     this.getAllWorkflows();
+
+    this.ups.getWorkflowDetails().subscribe((res) => {
+      this.workflow = res;
+    },
+      (err) => {
+        console.log("Error occures", err);
+      }
+    )
   }
 
   getAllWorkflows(){
@@ -39,9 +53,20 @@ export class WorkflowListComponent implements OnInit {
       this.getAllWorkflows();
     })
   }
-  editWorkflow(row:any){
-    this.formValue.controls['workflowname'].setValue(row.workflowname);
-    this.formValue.controls['workflowdescription'].setValue(row.workflowdescription);
-    this.formValue.controls['workflowstatus'].setValue(row.workflowstatus);
+
+  // editWorkflow(row:any, ){
+  //   this.formValue.controls['workflowname'].setValue(row.workflowname);
+  //   this.formValue.controls['workflowdescription'].setValue(row.workflowdescription);
+  //   this.formValue.controls['workflowstatus'].setValue(row.workflowstatus);
+  //   this.router.navigate(['/update', row]);
+  // }
+  
+  update(id: number) {
+    this.router.navigate(['/update', id]);
   }
+
+  view(id: number) {
+    this.router.navigate(['/view', id]);
+  }
+
 }

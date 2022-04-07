@@ -40,11 +40,11 @@ const routes: Routes = [
   // },
   {
     component:UpdateWfComponent,
-    path:"update-workflow"
+    path:"update/:id"
   },
   {
     component:ViewWfComponent,
-    path:"view"
+    path:"view/:id"
   }
 ];
 

@@ -11,22 +11,24 @@
                         <div class="col-lg-10 col-xl-7 mx-auto">
                             <h3 class="display-4">Login</h3>
                             <p class="text-muted mb-4">workflowmanager.com</p>
-                            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <form [formGroup]="loginForm" (ngSubmit)="login()">
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="email" formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email address" required="" autofocus="" class="form-control ">
-                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <input formControlName="email" id="inputEmail" type="email" formControlName="email"   placeholder="Email address" required="" autofocus="" class="form-control ">
+                                    <span class="text-danger" style="font-size:12px;" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email Id is required</span>
+                                    <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                                         <div *ngIf="f.email.errors.required">Email is required</div>
                                         <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                                     </div>
+                                     </div> -->
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input id="inputPassword" type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" required=""  autofocus=""  class="form-control">
-                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <input  formControlName="password" id="inputPassword" type="password" formControlName="password"  placeholder="Password" required=""  autofocus=""  class="form-control">
+                                    <span class="text-danger" style="font-size:12px;" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password is required</span>
+                                    <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                                         <div *ngIf="f.password.errors.required">Password is required</div>
-                                     </div>
+                                     </div> -->
                                 </div>
                                
-                                <button type="submit" class="btn " style="margin-left: 110px; margin-top: 20px;">Login</button> <br><br><br>
+                                <button type="submit" class="btn " style="margin-left: 110px; margin-top: 20px;" [disabled]="!loginForm.valid">Login</button> <br><br><br>
 
                                 <div class="create" style="padding-left: 75px;">
                                     <p>Need an account? <a routerLink="/signup" id="create">Signup now</a></p>
