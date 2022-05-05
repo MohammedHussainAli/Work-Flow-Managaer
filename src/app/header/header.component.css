@@ -1,7 +1,7 @@
 .btn{
     /* border: black; */
     color: white;
-    background-color: #FF4D4D;
+    background-color: #f70c14;
     transition: all 0.3s ease-in-out;
 }
 .btn:hover{
@@ -11,7 +11,8 @@
     
 }
 #header{
-    background-color: #f70c14;
+    background-color: #FF4D4D;
     /* background-color: #33004D; */
+    
 }
 

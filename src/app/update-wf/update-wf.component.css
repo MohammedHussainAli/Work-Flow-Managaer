@@ -88,10 +88,10 @@ input:focus ~ .bar::before{
 }
 
 #submit:hover{
-  background-color: #000000;
-  color: #F44336;
-  transition: all 0.4s ease-in-out;
-  transform: translateX(20px);
+    background-color: #000000;
+    color: #F44336;
+    transition: all 0.4s ease-in-out;
+    transform: translateX(20px);
 }
 
 label{
@@ -143,13 +143,12 @@ a:hover{
     color: #ffffff;
     transition: all 0.3s ease-in;
 }
-
 a{
+    cursor: pointer;
     text-decoration: none;
     color: black;
     transition: 100ms;
 }
-
 #drop {
     /* Reset Select */
     appearance: none;
@@ -159,9 +158,9 @@ a{
     /* Personalize */
     flex: 1;
     border-radius: 3px;
-    padding: 0 1em;
+    padding: 0 15px;
     height: 35px;
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: rgb(0, 0, 0);
     /* font-weight: 500; */
     background: rgba( 255, 255, 255, 0.05 );
@@ -209,3 +208,5 @@ a{
       padding: 6px;
     font-size: 18px;
   }
+
+

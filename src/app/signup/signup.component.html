@@ -1,1 +1,40 @@
-<p>signup works!</p>
+<div class="container px-4 py-5 mx-auto">
+    <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+            <div class="card card1">
+                <div class="row d-flex px-lg-4 px-3 pt-3">
+                </div>
+                <form #loginform="ngForm" [formGroup]="signUpForm"  (ngSubmit)="registerUser()">
+                <div class="row justify-content-center " style="margin-top: -50px;">
+                    <div class="col-lg-8 my-5">
+                        <h3 class="mb-3">Get your Work-flow account now.</h3> <small class="text-muted">We are glad that you are here.</small>
+                        <div class="form-group mt-5"> 
+                            <input formControlName="username" [(ngModel)]="user.username" type="text" id="name" class="form-control" required> <label class="form-control-placeholder" for="name">Username</label>
+                        </div>
+                        <div class="form-group mt-4"> 
+                            <input formControlName="email" type="text" id="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" [(ngModel)]="user.emailId" class="form-control" required> <label class="form-control-placeholder" for="email">Email</label>
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                             </div>
+                        </div>
+                        <div class="form-group mt-4"> 
+                            <input formControlName="password" type="password" id="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [(ngModel)]="user.password" class="form-control" required> <label class="form-control-placeholder" for="password">Password</label>
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                             </div>
+                        </div>
+                        <small class="text-danger"><a routerLink="/login" style="color: red;">{{message}}</a> </small>
+                        <div class="row justify-content-center my-3"> <button [disabled]="!signUpForm.valid" class="btn btn-gray">Sign up</button> </div>
+                        <div class="row justify-content-center my-2"> <small class="text-muted" style="font-size: larger; text-align: center;">or</small> </div>
+                        <div class="row justify-content-center my-2"> <a href="#" style="text-align: center;"><img id="google" src="https://i.imgur.com/8lJt6UN.png" class="mr-2">Sign up with Google</a> </div>
+                    </div>
+                    <div class="bottom text-center mb-3" > <a routerLink="/login" style="cursor: pointer;" id="already" class="sm-text mx-auto mb-3">Already have an account?</a> </div>
+                </div>
+              </form>
+            </div>
+            <div class="card card2"> <img id="image" src="https://img.freepik.com/free-vector/processing-concept-illustration_114360-1395.jpg?t=st=1651302757~exp=1651303357~hmac=e2e2b3ad4b9af31b474ad4c38e18f8b5af4b293e21678a2d1496b99656d06c77&w=740"> </div>
+        </div>
+    </div>
+</div>
+

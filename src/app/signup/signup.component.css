@@ -1,0 +1,130 @@
+input,
+textarea {
+    /* background-color: #F3E5F5; */
+    padding: 8px 0px 8px 0px !important;
+    width: 100%;
+    border-radius: 0 !important;
+    box-sizing: border-box;
+    border: none !important;
+    border-bottom: 1px solid #979191 !important;
+    font-size: 18px !important;
+    color: #000 !important;
+    font-weight: 300
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #D32F2F !important;
+    outline-width: 0;
+    font-weight: 400
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+.card {
+    border-radius: 0;
+    border: none;
+    position: relative;
+    margin-bottom: -24px;
+
+}
+
+.card1 {
+    width: 50%
+}
+
+/* .card2 {
+    margin-bottom: -48px;
+    margin-left: 6%;
+    margin-right: -122px;
+    margin-top: -60px;
+    width: 50%;
+    height: 750px;
+} */
+
+#image {
+    margin-top: -60px;
+    margin-left: 17.2%;
+    width: 100%;
+    height:550px;
+    /* margin: auto */
+}
+
+#logo {
+    position: absolute
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem
+}
+
+.form-control-placeholder {
+    position: absolute;
+    top: 0;
+    padding: 7px 0 0 0;
+    transition: all 300ms;
+    opacity: 0.5
+}
+
+.form-control:focus+.form-control-placeholder,
+.form-control:valid+.form-control-placeholder {
+    font-size: 80%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1
+}
+
+.btn-gray {
+    width: 140px;
+    border-radius: 50px;
+    color: #fff;
+    background-color: #f70c14;
+    padding: 8px 10px
+}
+
+.btn-gray:hover {
+    color: #f70c14;
+    background-color: black;
+    transition: all 0.4s ease-in-out;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+#already{
+   color: #f70c14;
+}
+#already:hover{
+    color: #000;
+    text-decoration: underline;
+
+}
+
+#google {
+    width: 20px;
+    height: 20px
+}
+
+.bottom {
+    bottom: 0;
+    position: absolute;
+    width: 100%
+}
+
+.sm-text {
+    font-size: 15px
+}

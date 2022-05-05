@@ -145,7 +145,7 @@
     left: 50%;
     /* border:solid 2px rgb(0, 0, 0); */
     border-radius: 5px;
-    background-color: #FF4D4D;
+    background-color: #ffffff;
     /* background-color: #8800CC; */
     transform: translatex(-50%);
   }
@@ -159,9 +159,9 @@
     height: 40px;
     /* border: solid 2px rgb(0, 0, 0); */
     border-radius: 50%;
-    background-color: #FF4D4D;
+    background-color: #ffffff;
     /* background-color: #8800CC; */
-    color: #000000;
+    color: #f70c14;
   }
   
   .item-icon-6{
